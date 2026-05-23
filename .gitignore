@@ -1,0 +1,31 @@
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+
+# --- Project artefacts ---
+logs/
+wandb/
+checkpoint/
+rollout_*/
+deep_research_bench_ood_results/
+*.log
+*.pid
+*.swp
+
+# --- Bulky binaries (do not commit accidentally) ---
+*.bin
+*.pt
+*.safetensors

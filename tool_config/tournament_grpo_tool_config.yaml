@@ -1,0 +1,22 @@
+tools:
+  - class_name: verl.tools.tournament_grpo_search_tools.GoogleSearchTool
+    config:
+      type: native
+      timeout: 30
+      # Web search backend URL. Replace with your own search API endpoint, or
+      # leave it unset and export `WEB_SEARCH_API_URL` in your shell.
+      url: ${oc.env:WEB_SEARCH_API_URL,""}
+      # Name of the environment variable that stores the API key for the
+      # search backend (so the secret never appears in this config file).
+      api_key_env: WEB_SEARCH_API_KEY
+      search_engine: ${oc.env:SEARCH_ENGINE,search_prime}
+      query_rewrite: "false"
+      max_results: 10
+
+  - class_name: verl.tools.tournament_grpo_search_tools.BrowseWebpageTool
+    config:
+      type: native
+      timeout: 30
+      # Uses Jina Reader (https://r.jina.ai/) for page extraction. Optional
+      # API key is read from the environment variable named below.
+      jina_api_key_env: JINA_API_KEY
